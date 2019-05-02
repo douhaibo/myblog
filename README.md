@@ -3,9 +3,9 @@
 本博客部分内容参考温志怀博客和思欲主题，详情请移步  [温志怀博客](http://www.wenzhihuai.com) | [思欲主题](https://yusi123.com/)<br>
 网站的站点：[www.ljtnono.cn/myblog](www.ljtnono.cn/myblog)<br>
 下面是博客的首页<br>
-<div align="center">
-  ![博客首页](https://www.ljtnono.cn/group1/M00/00/00/rBUAC1zKoxGACeKiAAN_4hNttpw288.png)
-</div>
+
+![博客首页](https://www.ljtnono.cn/group1/M00/00/00/rBUAC1zKoxGACeKiAAN_4hNttpw288.png)
+
 
 # 博客的技术选型 
 [![GitHub stars](https://img.shields.io/github/stars/ljtnono/myblog.svg)](https://github.com/ljtnono/myblog/stargazers)
