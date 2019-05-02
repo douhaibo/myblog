@@ -20,7 +20,6 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<!--中间部分开始-->
 <div class="content" id="content">
     <div class="side fl">
         <div class="section-me">
@@ -150,45 +149,11 @@
             <script type="text/javascript" src="${basePath}engine1/wowslider.js"></script>
             <script type="text/javascript" src="${basePath}engine1/script.js"></script>
         </div>
-        <div class="blog-list">
-            <c:if test="${recommendBKBlogList.size() == 0}">
-                <div style="width: 100%;height: 1960px;text-align: center;">
-                    <span>没有数据</span>
-                </div>
-            </c:if>
-            <c:if test="${recommendBKBlogList.size() != 0}">
-                <c:forEach items="${recommendBKBlogList}" var="BKBlog">
-                    <div class="blog-list-item">
-                        <div class="item-title">
-                            <span class="fl" data-id="${BKBlog.tag.id}">${BKBlog.tag.link.title}</span>
-                            <h2 class="fl" data-id="${BKBlog.id}">${BKBlog.title}</h2>
-                        </div>
-                        <div class="item-desc">
-                            <div class="desc-img fl">
-                                <img title="${BKBlog.title}" class="lazy" data-original="${BKBlog.coverImg.src}">
-                            </div>
-                            <div class="desc-text fr">
-                                <p data-id="${BKBlog.id}" class="BKBlog-summary-list">${BKBlog.summary}</p>
-                            </div>
-                        </div>
-                        <div class="item-fork">
-                        <span>
-                            <i class="glyphicon glyphicon-eye-open"></i>
-                            ${BKBlog.viewCount}&nbsp;浏览
-                        </span>
-                            <span>
-                            <i class="glyphicon glyphicon-comment"></i>
-                            ${BKBlog.commentCount}&nbsp;评论
-                        </span>
-                        </div>
-                    </div>
-                </c:forEach>
-            </c:if>
-        </div>
+        <%--    博客列表容器    --%>
+        <div class="blog-list"></div>
     </div>
     <div class="clearfix"></div>
 </div>
-<!--中间部分结束-->
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

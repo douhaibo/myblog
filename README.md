@@ -1,14 +1,16 @@
 # myblog
-我的个人博客
+这是一个使用java作为后端的博客系统，使用的是editor.md插件作为markdown文本编辑器
 
 用到的技术：
 SSM、shiro、WOWSlider、bootstrap、mysql、font-awesome、
 fastdfs文件系统、redis缓存
 
-博客的首页：www.ljtnono.cn/myblog<br>
+博客的首页地址：www.ljtnono.cn/myblog<br>
+
 下面是博客的首页
-![](http://www.ljtnono.cn:8888/group1/M00/00/00/rBUAC1yFycOAWBwPAAInnOxvOoo108.jpg)
-下面是博客的首页展示
+
+![博客首页](https://www.ljtnono.cn/group1/M00/00/00/rBUAC1zKoxGACeKiAAN_4hNttpw288.png)
+
 ## 2018/11/1
 今天第一天开始弄这个个人博客网站，感觉好激动，每次做一个新的东西都会有很多想法<br>
 希望这个网站不要做到一半就放弃，也希望自己能够做好这个网站。<br>

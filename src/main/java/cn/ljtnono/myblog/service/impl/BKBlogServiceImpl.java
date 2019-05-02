@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 import static cn.ljtnono.myblog.common.Counts.*;
 
@@ -291,6 +292,7 @@ public class BKBlogServiceImpl extends EssentialServiceImpl implements BKBlogSer
     @Override
     public List<?> getMultiple(PageParam pageParam) {
         super.getMultiple(pageParam);
+        // TODO 做缓存
         if (pageParam != null) {
             pageParam.check();
             PageHelper.startPage(pageParam.getPage(), pageParam.getLimit());
