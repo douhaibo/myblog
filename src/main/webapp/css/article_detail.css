@@ -1,0 +1,154 @@
+/*中间部分*/
+#content {
+    width: 1160px;
+    margin: 0 auto 30px;
+}
+#content > .main {
+    width: 700px;
+    min-height: 1925px;
+}
+.main > .main-header {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #f7f7f7;
+}
+.main > .main-header > .main-header-nav {
+    width: 100%;
+    height: 35px;
+    background-color: #f7f7f7;
+    padding: 5px 20px;
+    text-align: center;
+}
+.main-header-nav > .home {
+    font-size: 32px;
+    color: #23ad44;
+    line-height: 25px;
+    float: left;
+    margin-right: 10px;
+}
+.main-header-nav > .article-tag {
+    font-size: 16px;
+    color: #23ad44;
+    line-height: 25px;
+    float: left;
+}
+.main-header-nav > p.article-title {
+    line-height: 25px;
+    display: inline-block;
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: -50px;
+}
+.main-header > .main-header-content {
+    width: 100%;
+    height: 83px;
+    background-color: #fff;
+    margin: 0;
+    text-align: center;
+    padding: 15px 20px;
+}
+.main-header-content > h2 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 22px;
+    color: #000;
+}
+.main-header-content > .article-detail {
+    margin: 10px auto 0;
+}
+.article-detail > .alt {
+    text-decoration: none;
+    color: #00a67c;
+    margin-right: 10px;
+}
+.article-detail > span:last-child {
+    color: #00a67c;
+    margin-left: 10px;
+}
+.main-article {
+    width: 100%;
+    background-color: #fff;
+}
+
+.moreinfo {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    position: relative;
+
+}
+.moreinfo > .next-prev {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: #fbfbfb;
+    bottom: 0;
+}
+.next-prev > a {
+    display: block;
+    margin: 0 20px;
+    padding: 0;
+    line-height: 60px;
+    color: #00a67c;
+    font-size: 14px;
+}
+.next-prev > a:hover {
+    color: #007046;;
+}
+.moreinfo > .zz {
+    width: 100%;
+    height: 20px;
+}
+.moreinfo > .ds-fx {
+    width: 100%;
+    height: 120px;
+    position: relative;
+}
+.ds-fx > .ds,.ds-fx > .fx {
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    top: 50%;
+    margin-top: -20px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #FF9790;
+    color: #fff;
+    cursor: pointer;
+}
+.ds {
+    background-color: #FF9790;
+    left: 170px;
+}
+.fx {
+    background-color: #5fcec0;
+    left: 370px;
+    border: 1px solid #d6d6d6 !important;
+}
+.ds > span,.fx > span {
+    display: block;
+    line-height: 40px;
+}
+
+.zz > p {
+    margin: 0 20px;
+    padding: 0;
+    text-align: left;
+    font-size: 14px;
+}
+.zz > p a {
+    color: #00a67c;
+}
+.zz > p i {
+    margin: 0 10px;
+}
+.zz > p a:hover {
+    color: #007046;;
+}

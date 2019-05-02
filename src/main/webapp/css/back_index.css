@@ -1,0 +1,321 @@
+/**
+    后台系统
+    通用样式
+ */
+html,body {
+    font-family: "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", Helvetica, Tahoma, "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+}
+a:hover {
+    color: #f1e05a;
+    text-decoration: #f1e05a;
+}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color : #666;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+ul {
+    padding: 0;
+}
+
+.layui-layout-admin .layui-footer {
+    background-color: #ffffff;
+}
+
+.layui-table-cell .layui-form-checkbox[lay-skin=primary] {
+    top: 4px;
+    padding: 0;
+}
+.layui-tab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.layui-tab-title li {
+    min-width: 0;
+    padding: 0;
+}
+.layui-tab-title {
+    position: relative;
+    left: 0;
+    height: 40px;
+    white-space: nowrap;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    font-size: 14px;
+    border: none;
+}
+
+.layui-tab-title .layui-this:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 0;
+    border: none;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+.layui-table {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.layui-table, .layui-table-view {
+    margin: 0;
+}
+/*日期控件调整*/
+.layui-laydate-main,#layui-laydate1 {
+    width: 100% !important;
+}
+.layui-laydate-content > table{
+    width: 100% !important;
+}
+.layui-laydate, .layui-laydate-hint {
+    border: none !important;
+    -webkit-box-shadow: none !important;=
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.layui-laydate {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+/*图片部分*/
+#back-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+    position: relative;
+}
+#back-container > .container-content-left {
+    width: 63%;
+    height: 800px;
+    margin-right: 10px;
+    float: left;
+}
+#back-container > .container-content-right {
+    width: 35%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    float: left;
+}
+.header {
+    height: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+    color: #555252;
+    border-bottom: 1px solid #eeeeee;
+}
+.circles {
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+.circle {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #eee;
+    line-height: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    -webkit-box-shadow:  0 1px 1px #000;
+    -moz-box-shadow:  0 1px 1px #000;
+    box-shadow:  0 1px 1px #000;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+.circle-active,.circle:hover {
+    background-color: #959393;
+}
+.circle:last-child {
+    margin-right: 0;
+}
+.system-info {
+    width: 100%;
+    min-height: 296px;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.link-blog-container {
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+.link-blog-container > .link-blog-content {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.btn-link-blog {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.exclamation {
+    cursor: pointer;
+}
+.message-container {
+    width: 100%;
+    background-color: #ffffff;
+}
+.message-container > .message-content {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #656262;
+    letter-spacing:normal;
+    line-height: 24px;
+}
+
+.message-container > .message-content > p:hover {
+    text-decoration: underline #f1e05a;
+    cursor: pointer;
+}
+
+.datatable-container {
+    width: 100%;
+    background-color: #fff;
+}
+
+.form-search-container {
+    background-color: #ffffff;
+    padding: 20px;
+}
+.form-search > input[type="text"] {
+    width: 20%;
+    margin-right: 10px;
+}
+
+/*修改图片信息的弹出层*/
+#form-update-container {
+    width: 300px;
+    padding: 20px 30px;
+}
+
+
+/*链接部分*/
+.weather {
+    width: 100%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+#weather-view-he {
+    width: inherit !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    font-family: inherit !important;
+    height: inherit !important;
+    font-size: inherit !important;
+}
+
+.calendar-container {
+    margin-bottom: 10px;
+}
+.calendar-container,.calendar-container > .calendar-content {
+    width: 100%;
+}
+
+.link-friend-container {
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.link-friend-container > .link-friend-content {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.link {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #FFF;
+    background: #7266ba;
+    font-weight: 500;
+    padding: 2px 6px;
+    text-align: center;
+    margin-right: 4px;
+    opacity: .9;
+}
+.link:nth-child(5n+1) {
+    background: #23ad44;
+}
+.link:nth-child(5n+2) {
+    background: #23b7e5;
+}
+.link:nth-child(5n+3) {
+    background: #d37088;
+}
+.link:nth-child(5n+4) {
+    background: #f05050;
+}
+.link > a {
+    color: #fff;
+    text-decoration: none;
+}
+.link:hover {
+    color: #fff;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    opacity: 1;
+}
+
+/*标题部分*/
+.tag-container, .tag-articles-container {
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+.tag-container > .tag-content, .tag-articles-container > .tag-articles-content {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+

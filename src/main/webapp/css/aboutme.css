@@ -1,0 +1,262 @@
+#content {
+    width: 1160px;
+    background-color: #fff;
+    padding: 0 20px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto 30px;
+}
+#content > .header {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #cccccc;
+}
+#content > .header  h1 {
+    font-size: 18px;
+    color: #000;
+    line-height: 60px;
+    display: inline;
+}
+.fx {
+    height: 60px;
+    position: relative;
+}
+.fx > .fx-btn {
+    width: 120px;
+    height: 40px;
+    margin: 10px auto;
+}
+
+#content > .info {
+    width: 100%;
+    height: 420px;
+    background-color: #fff;
+    position: relative;
+}
+#content > .info > .header {
+    position: absolute;
+    left: -25px;
+    width: 1165px;
+    height: 37px;
+    background-color: #fbfbfb;
+    border-left: 5px solid #00a67c;
+}
+#content > .info > .header > p {
+    font-size: 16px;
+    color: #666;
+    height: 100%;
+    text-align: center;
+    line-height: 37px;
+}
+.info > .info-detail {
+    width: 100%;
+    background-color: #fff;
+    padding-top: 38px;
+}
+.info > .info-detail > .info-avatarl {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 38px auto 0;
+    cursor: pointer;
+}
+.info > .info-detail > p {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.info > .contactme {
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 70px;
+}
+.contactme > a {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+}
+.contactme > a > i {
+    line-height: 60px;
+}
+.contactme > a > .weibo {
+    font-size: 40px;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    background: #f78585;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.contactme > a > .weibo:hover {
+    background: #7FB4AB;
+}
+
+.contactme > a > .wechat {
+    font-size: 40px;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    background: #6fc299;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.contactme > a > .wechat:hover {
+    background: #6fc999;
+}
+
+.contactme > a > .qq {
+    font-size: 40px;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    background: #e74c3c;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.contactme > a > .qq:hover {
+    opacity: .6;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+}
+
+.contactme > a > .github {
+    font-size: 40px;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    background: #202529;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.contactme > a > .github:hover {
+    opacity: .6;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+}
+
+.contactme > a > .envelope {
+    font-size: 40px;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    background: #eca3ac;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.contactme > a > .envelope:hover {
+    background: #ECA385;
+}
+.contactme > a > .rss {
+    font-size: 40px;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    background: #ff7c49;
+    color: #fff;
+    cursor: pointer;
+}
+.contactme > a > .rss:hover {
+    background: #FF7C88;
+}
+#content > .skill-tree {
+    width: 100%;
+    min-height: 600px;
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 37px;
+}
+#content > .skill-tree > .header {
+    position: absolute;
+    left: -25px;
+    width: 1165px;
+    height: 37px;
+    background-color: #fbfbfb;
+    border-left: 5px solid #00a67c;
+}
+#content > .skill-tree > .header > p {
+    font-size: 16px;
+    color: #666;
+    height: 100%;
+    text-align: center;
+    line-height: 37px;
+}
+#content > .skill-tree >.skill-table {
+    position: absolute;
+    width: 706px;
+    height: 385px;
+    background-color: #fff;
+    left: 50%;
+    top: 50%;
+    margin-left: -353px;
+    margin-top: -198px;
+}
+#content > .timeline  {
+    width: 100%;
+    min-height: 480px;
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 38px;
+}
+#content > .timeline  > .header {
+    position: absolute;
+    left: -25px;
+    width: 1165px;
+    height: 37px;
+    background-color: #fbfbfb;
+    border-left: 5px solid #00a67c;
+}
+#content > .timeline > .header > p {
+    font-size: 16px;
+    color: #666;
+    height: 100%;
+    text-align: center;
+    line-height: 37px;
+}
+#content > .timeline > .timeline-line {
+    padding-top: 37px;
+}
+#content > .timeline > .timeline-line > .layui-timeline {
+    margin: 38px auto 0;
+    width: 1000px;
+}
+
+
+#content > .book-table  {
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 38px;
+}
+#content > .book-table  > .header {
+    position: absolute;
+    left: -25px;
+    width: 1165px;
+    height: 37px;
+    background-color: #fbfbfb;
+    border-left: 5px solid #00a67c;
+}
+#content > .book-table > .header > p {
+    font-size: 16px;
+    color: #666;
+    height: 100%;
+    text-align: center;
+    line-height: 37px;
+}
+
+#content > .book-table > .book-table-container {
+    padding-top: 37px;
+}
+#content > .book-table > .book-table-container > .layui-table {
+    margin-top: 38px;
+}
+

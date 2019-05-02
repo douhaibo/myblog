@@ -1,0 +1,120 @@
+html,body {
+    font-family: "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", Helvetica, Tahoma, "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+h1,h2,h3,h4,h5,h6 {
+    color : #666;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+ul {
+    padding: 0;
+}
+/*side部分*/
+.section-me-head,
+.section-books-head,
+.section-album-head,
+.section-tags-head,
+.section-hot-head,
+.section-links-head,
+.section-guess-head,
+.section-qrcode-head {
+    width: 100%;
+    height: 48px;
+    background: -webkit-linear-gradient(#f5f6f5, #fdfdfd); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#f5f6f5, #fdfdfd); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#f5f6f5, #fdfdfd); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#f5f6f5, #fdfdfd); /* 标准的语法 */
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+.section-me-head::before,
+.section-books-head::before,
+.section-album-head::before,
+.section-tags-head::before,
+.section-hot-head::before,
+.section-guess-head::before,
+.section-links-head::before,
+.section-qrcode-head::before {
+    content: "";
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: -5px;
+    display: block;
+    opacity: .6;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+}
+
+.section-me-head::before {
+    background-color: rgb(52, 114, 239);
+}
+.section-album-head::before {
+    background-color: #ff858e;
+}
+.section-tags-head::before {
+    background-color: #62c1ff;
+}
+.section-hot-head::before {
+    background-color: #7266ba;
+}
+.section-links-head::before {
+    background-color: #23ad44;
+}
+.section-qrcode-head::before {
+    background-color: #23b7e5;
+}
+.section-guess-head::before {
+    background-color: #ff7c88;
+}
+.section-books-head::before {
+    background-color: #f2c409;
+}
+
+.section-guess-head > p,
+.section-books-head > p,
+.section-me-head > p,
+.section-album-head > p,
+.section-tags-head > p,
+.section-hot-head > p,
+.section-links-head > p,
+.section-qrcode-head > p {
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    line-height: 48px;
+}
+/*tooltip配置*/
+.tooltip-inner{
+    text-align: center !important;
+    color:#ffffff !important;
+    padding: 6px !important;
+    font-size: 12px !important;
+    background-color:#27937b !important;
+}
+.tooltip-arrow{
+    opacity:0.9 !important;
+    filter:alpha(opacity=90) !important;
+    color: #7FB4AB !important;
+    border-top-color: #27937b !important;
+}
+.tooltip{
+    opacity: 1 !important;
+}

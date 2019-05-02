@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:cache="http://www.springframework.org/schema/cache" xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			            http://www.springframework.org/schema/beans/spring-beans.xsd
+			            http://www.springframework.org/schema/context
+			            http://www.springframework.org/schema/context/spring-context.xsd
+			            http://www.springframework.org/schema/mvc
+			            http://www.springframework.org/schema/mvc/spring-mvc.xsd
+			            http://www.springframework.org/schema/tx
+			            http://www.springframework.org/schema/tx/spring-tx.xsd
+			            http://mybatis.org/schema/mybatis-spring
+			            http://mybatis.org/schema/mybatis-spring.xsd
+						http://www.springframework.org/schema/cache
+						http://www.springframework.org/schema/cache/spring-cache-3.1.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!--使用db.properties进行数据库配置-->
+	<context:property-placeholder  location="classpath:db.properties"/>
+	<!--配置realm-->
+	<bean id="userRealm" class="cn.ljtnono.myblog.shiro.UserRealm" >
+		<!--配置加密匹配器-->
+		<property name="credentialsMatcher">
+			<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+				<property name="hashAlgorithmName" value="MD5" />
+				<property name="hashIterations" value="1024" />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- shiro redisManager -->
+	<bean id="redisManager" class="org.crazycake.shiro.RedisManager">
+		<property name="host" value="${redis.hostName}" />
+		<property name="port" value="${redis.port}" />
+		<property name="expire" value="${redis.expire}" />
+		<property name="timeout" value="${redis.timeout}" />
+		<property name="password" value="${redis.password}" />
+	</bean>
+	<!-- redisSessionDAO -->
+	<bean id="redisSessionDAO" class="org.crazycake.shiro.RedisSessionDAO">
+		<property name="redisManager" ref="redisManager" />
+	</bean>
+	<!-- sessionManager -->
+	<bean id="sessionManager"
+		  class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+		<property name="sessionDAO" ref="redisSessionDAO" />
+	</bean>
+	<!-- cacheManager -->
+	<bean id="cacheManager" class="org.crazycake.shiro.RedisCacheManager">
+		<property name="redisManager" ref="redisManager" />
+	</bean>
+
+	<!--配置安全管理器-->
+	<!-- 配置安全管理器SecurityManager -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<!--配置自定义realm实现-->
+		<property name="realm" ref="userRealm"/>
+		<property name="sessionManager" ref="sessionManager" />
+		<property name="cacheManager" ref="cacheManager" />
+ 	</bean>
+	<!-- 定义ShiroFilter -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager"/>
+		<!--这里填写的直接是url-->
+		<property name="loginUrl" value="/back_login"/>
+		<!--<property name="unauthorizedUrl" value="/error/error_shiro"/>-->
+		<property name="filterChainDefinitions">
+			<value>
+				/back/login = anon
+				/back_login = anon
+				/back_** = authc
+				/images/** = anon
+				/css/** = anon
+				/js/** = anon
+				/data1/** = anon
+				/lib/** = anon
+				/engine1/** = anon
+				/systemInfo/** = anon
+			</value>
+		</property>
+	</bean>
+	<!--配置使用注解授权-->
+	<!--<aspect:config proxy-target-class="true"/>-->
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor" >
+		<property name="securityManager" ref="securityManager"/>
+	</bean>
+</beans>
