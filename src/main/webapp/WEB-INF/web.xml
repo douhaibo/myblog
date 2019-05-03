@@ -29,16 +29,6 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-
-    <!--&lt;!&ndash;配置session超时时间 为两天&ndash;&gt;-->
-    <!--<session-config>-->
-    <!--<session-timeout>4320</session-timeout>-->
-    <!--</session-config>-->
-
-    <!--配置404页面-->
-    <!--这里配置的location会被springmvc当做一个请求处理，
-    所以需要在springmvc配置文件中做静态资源的映射处理
-    -->
     <error-page>
         <error-code>404</error-code>
         <location>/html/error/404.html</location>
@@ -47,13 +37,6 @@
         <error-code>500</error-code>
         <location>/html/error/500.html</location>
     </error-page>
-
-    <!--405  Method Not Allowed-->
-    <!--<error-page>-->
-        <!--<error-code>405</error-code>-->
-        <!--<location>/defaultError</location>-->
-    <!--</error-page>-->
-
     <!--Shiro过滤器-->
     <filter>
         <filter-name>shiroFilter</filter-name>
