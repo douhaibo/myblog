@@ -13,12 +13,12 @@
 [![GitHub issues](https://img.shields.io/github/issues/ljtnono/myblog.svg)](https://github.com/ljtnono/imyblog/ssues)
 
 
-**Java**：Spring、Spring MVC、Mybatis
-**前端**：Bootstrap、Jquery、Echarts、WowSlider（图片切换）、layui 
-**图片存储**：fastdfs分布式图片框架
-**缓存**：Redis
-**数据库**：MySQL  
-**部署**：Tomcat、Nginx、阿里云服务器
+**Java**：Spring、Spring MVC、Mybatis <br>
+**前端**：Bootstrap、Jquery、Echarts、WowSlider（图片切换）、layui <br>
+**图片存储**：fastdfs分布式图片框架 <br>
+**缓存**：Redis <br>
+**数据库**：MySQL   <br>
+**部署**：Tomcat、Nginx、阿里云服务器 <br>
 
 
 # 更新日志
@@ -85,6 +85,8 @@
 更新内容：<br>
 1、更新了icon图片<br>
 
-
+* 2019/5/4 <br>
+更新内容：<br>
+1、修改了后台登陆jsp的请求路径<br>
 
 **持续更新**
