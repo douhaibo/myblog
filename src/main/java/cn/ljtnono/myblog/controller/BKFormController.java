@@ -41,9 +41,9 @@ public class BKFormController {
 		return mv;
 	}
 
-	@RequestMapping("/back_login")
+	@RequestMapping("/admin/login")
 	public String backLogin() {
-		return "back_login";
+		return "/admin/login";
 	}
 
 }
