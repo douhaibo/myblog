@@ -1,6 +1,5 @@
 package cn.ljtnono.myblog.service.impl;
 
-import cn.ljtnono.myblog.entity.BKLink;
 import cn.ljtnono.myblog.entity.BKTag;
 import cn.ljtnono.myblog.exception.DataBaseOperationException;
 import cn.ljtnono.myblog.mapper.BKTagMapper;
