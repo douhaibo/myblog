@@ -10,39 +10,39 @@
             <li class="layui-nav-item">
                 <a class="" href="javascript:void(0);">博客管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="${basePath}blog_edit" target="_blank">编写博客</a></dd>
-                    <dd><a href="${basePath}back_blog">博客报表</a></dd>
+                    <dd><a href="${basePath}admin/blog/edit" target="_blank">编写博客</a></dd>
+                    <dd><a href="${basePath}admin/blog/datatable">博客报表</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
                 <a href="javascript:void(0);">标签管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="${basePath}back_tag_datatable">标签报表</a></dd>
+                    <dd><a href="${basePath}admin/tag/datatable">标签报表</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
                 <a href="javascript:void(0);">用户管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="${basePath}back_user">用户报表</a></dd>
+                    <dd><a href="${basePath}admin/user">用户报表</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
                 <a href="javascript:void(0);">图片管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="${basePath}back_img_datatable">图片报表</a></dd>
-                    <dd><a href="${basePath}back_img_upload">上传图片</a></dd>
+                    <dd><a href="${basePath}admin/img/datatable">图片报表</a></dd>
+                    <dd><a href="${basePath}admin/img/upload">上传图片</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
                 <a href="javascript:void(0);">书籍管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="${basePath}back_book">书籍报表</a></dd>
+                    <dd><a href="${basePath}admin/book">书籍报表</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
                 <a href="javascript:void(0);">链接管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="${basePath}back_link_datatable">链接报表</a></dd>
+                    <dd><a href="${basePath}admin/link/datatable">链接报表</a></dd>
                 </dl>
             </li>
         </ul>
@@ -52,6 +52,6 @@
     //导航显示
     $(function () {
         $("li.layui-nav-item").removeClass("layui-nav-itemed");
-        $("a[href='${basePath}${currentPageName}']").parents(".layui-nav-item").addClass("layui-nav-itemed");
+        $("a[href='${basePath}admin/${module}/${currentPage}']").parents(".layui-nav-item").addClass("layui-nav-itemed");
     })
 </script>

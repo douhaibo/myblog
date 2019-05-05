@@ -10,11 +10,13 @@
             <div class="layui-card form-search-container">
                 <form class="layui-form">
                     <div class="layui-form-item">
-                        <label class="layui-form-label">查询标签</label>
+                        <label class="layui-form-label">查询链接</label>
                         <div class="layui-input-block form-search">
                             <input type="text" name="id" placeholder="请输入id"
                                    autocomplete="off" class="layui-input  fl">
-                            <input type="text" name="title" placeholder="请输入标签"
+                            <input type="text" name="title" placeholder="请输入标题"
+                                   autocomplete="off" class="layui-input  fl">
+                            <input type="text" name="href" placeholder="请输入地址"
                                    autocomplete="off" class="layui-input  fl">
                             <button class="layui-btn" lay-submit lay-filter="btn-search">
                                 <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
@@ -25,7 +27,7 @@
                 </form>
             </div>
             <div class="datatable-container">
-                <table id="datatable-tag" lay-filter="datatable-tag"></table>
+                <table id="datatable-link" lay-filter="datatable-link"></table>
             </div>
         </div>
         <div class="container-content-right">
@@ -37,22 +39,22 @@
                 </script>
                 <script type="text/javascript" src="https://apip.weatherdt.com/view/static/js/r.js?v=1111"></script>
             </div>
-            <%--     标签展示       --%>
-            <div class="tag-container">
+            <%--友情链接--%>
+            <div class="link-friend-container">
                 <div class="header">
-                    <span>标签</span>
+                    <span>友情链接</span>
                 </div>
-                <div class="tag-content">
+                <div class="link-friend-content">
                     <%--这里可以加上默认的填充方式让页面变得好看些--%>
                 </div>
             </div>
-            <%--    标签文章分布      --%>
-            <div class="tag-articles-container">
+            <%--日历组件--%>
+            <div class="calendar-container">
                 <div class="header">
-                    <span>文章分布图</span>
+                    <span>日历</span>
                 </div>
-                <div class="tag-articles-content">
-                    <%--这里可以加上默认的填充方式让页面变得好看些--%>
+                <div class="calendar-content">
+                    <div id="calendar"></div>
                 </div>
             </div>
         </div>
@@ -110,4 +112,7 @@
         </div>
     </form>
 </div>
-<script src="${basePath}js/back_tag_datatable.min.js"></script>
+<script src="${basePath}js/admin/link/datatable.min.js"></script>
+
+
+

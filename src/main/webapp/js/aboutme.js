@@ -74,7 +74,7 @@ $(function () {
       }]
    };
    $.ajax({
-      url : "/myblog/getBKSkillAll",
+      url : "/myblog/skill/getBKSkillAll",
       method : "GET",
       dataType: "json",
       success: function (data) {
@@ -105,7 +105,7 @@ $(function () {
 
 
    $.ajax({
-      url : "/myblog/getAboutMeBookList",
+      url : "/myblog/book/getAboutMeBookList",
       method: "GET",
       dataType: "json",
       success: function (data) {
@@ -125,7 +125,7 @@ $(function () {
    });
 
    $.ajax({
-      url : "/myblog/getBKTimeLineAll",
+      url : "/myblog/timeLine/getBKTimeLineAll",
       method: "GET",
       dataType: "json",
       success: function (data) {

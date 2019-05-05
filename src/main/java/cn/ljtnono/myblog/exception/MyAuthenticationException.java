@@ -10,7 +10,6 @@ import java.io.Serializable;
 */
 public class MyAuthenticationException extends RuntimeException implements Serializable {
 
-
     private static final long serialVersionUID = -6152795108337532556L;
 
     public MyAuthenticationException() {

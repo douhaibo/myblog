@@ -5,7 +5,7 @@ layui.use('upload', function() {
     var imgListView = $('#imgList');
     uploadListIns = upload.render({
         elem: '#btn-select',
-        url: '/myblog/uploadImg',
+        url: '/myblog/img/uploadImg',
         accept: 'images',
         acceptMime: 'image/*',
         multiple: true,

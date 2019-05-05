@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="${basePath}lib/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="${basePath}lib/editor.md-master/css/editormd.css">
     <link rel="stylesheet" href="${basePath}lib/layui-v2.4.5/layui/css/layui.css">
-    <link rel="stylesheet" href="${basePath}css/back_index.min.css">
+    <link rel="stylesheet" href="${basePath}css/admin/index.min.css">
     <link rel="shortcut icon" href="${basePath}images/logo.ico" />
     <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
@@ -27,7 +27,7 @@
 <div class="layui-layout layui-layout-admin">
     <jsp:include page="header.jsp" flush="true"/>
     <jsp:include page="left.jsp" flush="true"/>
-    <jsp:include page="${currentPageName}.jsp"/>
+    <jsp:include page="${module}/${currentPage}.jsp"/>
     <jsp:include page="footer.jsp" flush="true"/>
 </div>
 <script>

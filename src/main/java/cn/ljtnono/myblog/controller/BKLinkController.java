@@ -26,6 +26,7 @@ import java.util.List;
  * @date 2019/3/21
  */
 @Controller
+@RequestMapping("/link")
 public class BKLinkController extends SimpleEssentialController {
 
     @Autowired

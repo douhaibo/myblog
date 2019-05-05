@@ -5,7 +5,7 @@
 const TABLE_IMG_CONFIG = {
     elem: '#datatable-img',
     height: 470,
-    url: '/myblog/getPageImgList',
+    url: '/myblog/img/getPageImgList',
     page: true,
     toolbar:"#toolbar",
     cols: [[
@@ -94,7 +94,7 @@ function deleteImgById(id,remove) {
     layer.confirm(message, function (index) {
         layer.close(index);
         $.ajax({
-            url: "/myblog/deleteImgById",
+            url: "/myblog/img/deleteImgById",
             data: {
                 id: id,
                 remove: remove
@@ -126,7 +126,7 @@ function deleteChecked(params,remove) {
     layer.confirm(message, function (index) {
         layer.close(index);
         $.ajax({
-            url: "deleteImgsByIdArray",
+            url: "/myblog/img/deleteImgsByIdArray",
             data: {
                 params: params,
                 remove: remove
@@ -199,7 +199,7 @@ function updateImg(img) {
     let load;
     // TODO 验证
     $.ajax({
-        url: "/myblog/updateImg",
+        url: "/myblog/img/updateImg",
         method: "POST",
         data: JSON.stringify(img),
         dataType: "json",
@@ -257,7 +257,7 @@ layui.use('form', function(){
             layui.use("table",function () {
                 const table = layui.table;
                 table.reload('datatable-img',{
-                    url : "/myblog/searchImg",
+                    url : "/myblog/img/searchImg",
                     where : {
                         id: img.id,
                         title: img.title

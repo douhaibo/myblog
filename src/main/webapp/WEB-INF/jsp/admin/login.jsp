@@ -13,13 +13,13 @@
     <link rel="shortcut icon" href="${basePath}images/logo.ico" />
     <link rel="stylesheet" href="${basePath}lib/supersozed/css/supersized.css">
     <link rel="stylesheet" href="${basePath}lib/layui-v2.4.5/layui/css/layui.css">
-    <link rel="stylesheet" href="${basePath}css/login.min.css">
+    <link rel="stylesheet" href="${basePath}css/admin/login.min.css">
     <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
     <script src="${basePath}lib/supersozed/js/supersized.3.2.7.min.js"></script>
     <script src="${basePath}lib/supersozed/js/supersized-init.js"></script>
     <script src="${basePath}lib/layui-v2.4.5/layui/layui.js"></script>
     <script src="${basePath}js/common.min.js"></script>
-    <script src="${basePath}js/back_login.min.js"></script>
+    <script src="${basePath}js/admin/login.min.js"></script>
 </head>
 <body>
     <div class="loginbox">

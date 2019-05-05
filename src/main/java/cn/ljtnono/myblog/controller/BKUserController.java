@@ -51,7 +51,8 @@ public class BKUserController extends SimpleEssentialController{
             subject.login(token);
             BKUser user = (BKUser) subject.getPrincipal();
             subject.getSession(true).setAttribute("user", user);
-            mv.addObject("currentPageName","softInfo");
+            mv.addObject("module","system");
+            mv.addObject("currentPage","softInfo");
             mv.setViewName("/admin/index");
         } catch (UnknownAccountException uae) {
             logger.error("未知用户！");

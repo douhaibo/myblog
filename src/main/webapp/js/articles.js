@@ -13,11 +13,11 @@ $(function () {
 
     //点击recommendblog的title和summary部分进行跳转操作
     $(".blog-list-item > .item-title > h2").click(function () {
-        location.href = "/myblog/article_detail?num=" + $(this).data("id");
+        location.href = "/myblog/blog/article_detail?num=" + $(this).data("id");
     });
 
     $(".blog-list-item > .item-desc > .desc-text > p").click(function () {
-       location.href = "/myblog/article_detail?num=" + $(this).data("id");
+       location.href = "/myblog/blog/article_detail?num=" + $(this).data("id");
     });
 
 });

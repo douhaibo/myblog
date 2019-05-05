@@ -1,13 +1,13 @@
 /**
- * 博客编辑器配置
- * @type {{emoji: boolean, saveHTMLToTextarea: boolean, imageFormats: string[], previewTheme: string, imageUploadURL: string, taskList: boolean, imageUpload: boolean, syncScrolling: string, editorTheme: string, onload: EDITORMD_CONFIG.onload, path: string, tocm: boolean, toolbarIcons: (function(): *), toolbarAutoFixed: boolean, width: string, flowChart: boolean, theme: string, placeholder: string, height: number}}
+ * 博客编辑器配置对象
+ * @type {{emoji: boolean, saveHTMLToTextarea: boolean, imageFormats: string[], previewTheme: string, imageUploadURL: string, taskList: boolean, imageUpload: boolean, syncScrolling: string, editorTheme: string, onload: EDITORMD_CONFIG.onload, path: string, tocm: boolean, toolbarIcons: (function(): string[]), toolbarAutoFixed: boolean, width: string, flowChart: boolean, theme: string, placeholder: string, height: number}}
  */
 const EDITORMD_CONFIG = {
     placeholder: '本编辑器支持Markdown编辑，左边编写，右边预览',
     height: 1000,
     width: "90%",
     syncScrolling: "single",
-    path: "lib/editor.md-master/lib/",   //你的path路径（原资源文件中lib包在我们项目中所放的位置）
+    path: "/myblog/lib/editor.md-master/lib/",   //你的path路径（原资源文件中lib包在我们项目中所放的位置）
     theme: "default",//工具栏主题
     previewTheme: "default",//预览主题
     editorTheme: "neat",//编辑主题
@@ -19,7 +19,7 @@ const EDITORMD_CONFIG = {
     flowChart: true,
     imageUpload: true,
     imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-    imageUploadURL: "/myblog/editormdUploadImg",
+    imageUploadURL: "/myblog/img/editormdUploadImg",
     onload: function (data) {
 
     },
@@ -104,7 +104,7 @@ function clean(editor, title){
 function sendAddBlogRequest(blog, editor, titleInput) {
     var load;
     $.ajax({
-        url: "/myblog/addBlog",
+        url: "/myblog/blog/addBlog",
         data: JSON.stringify(blog),
         method: "POST",
         contentType: "application/json",
@@ -144,7 +144,7 @@ $(function () {
     var titleInput = $("#title");
     //TODO 使用ajax渲染tag标签下拉列表
     $.ajax({
-        url : "/myblog/getPageTagList",
+        url : "/myblog/tag/getPageTagList",
         data : {
             pageParam : null
         },

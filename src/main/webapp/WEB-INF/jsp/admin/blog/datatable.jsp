@@ -23,24 +23,22 @@
         var time = new Date(date);
         return formatDate(time, "yyyy-MM-dd hh:mm:ss");
     }
-
     layui.use('element', function () {
         var element = layui.element;
     });
     layui.use('table', function () {
         var table = layui.table;
-        //第一个实例
         table.render({
             elem: '#BKBlog-table',
-            url: '/myblog/getBlogList', //数据接口
+            url: '/myblog/blog/getBlogList',
             response: {
                 statusName: 'status',
                 statusCode: 200,
                 msgName: "message",
                 countName: "totalCount"
             },
-            page: true, //开启分页
-            cols: [[ //表头
+            page: true,
+            cols: [[
                 {type: 'checkbox', fixed: 'left'},
                 {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'},
                  {field: 'title', title: '标题', width: 170},
@@ -65,20 +63,13 @@
                 {fixed: 'right', title: '操作', templet: "#opbar"}
             ]]
         });
-
-        //监听操作栏的按钮点击事件
         table.on("tool(BKBlog-table)", function (obj) {
-            //获取当前行的数据
             var data = obj.data;
-            //如果是查看详情的话，那么直接跳转到相应的博客显示页面
             if (obj.event === "detail") {
                 window.open("${basePath}article_detail?num=" + data.id);
             } else if (obj.event === "del") {
-                //删除业务
             }
-            //console.log(obj);
         })
-
     });
 </script>
 

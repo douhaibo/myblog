@@ -31,6 +31,7 @@
         <property name="suffix" value=".jsp" />
         <property name="order" value="1"/>
     </bean>
+
     <!--引入shiro配置-->
     <import resource="classpath:/spring/applicationContext-shiro.xml" />
 

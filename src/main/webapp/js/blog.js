@@ -2,10 +2,10 @@ $(function () {
     const $blogList = $(".blog-list");
     //点击recommendblog的title和summary部分进行跳转操作
     $blogList.on("click",".blog-list-item > .item-title > h2",function () {
-        location.href = "/myblog/article_detail?num=" + $(this).data("id");
+        location.href = "/myblog/blog/article_detail?num=" + $(this).data("id");
     });
     $blogList.on("click",".blog-list-item > .item-desc > .desc-text > p ",function () {
-       location.href = "/myblog/article_detail?num=" + $(this).data("id");
+       location.href = "/myblog/blog/article_detail?num=" + $(this).data("id");
     });
     // TODO 获取友情链接 hot5 标签云
     layui.use('flow', function() {
@@ -18,7 +18,7 @@ $(function () {
             done: function (page, next) {
                 var lis = [];
                 $.ajax({
-                    url : "getPageBlogList",
+                    url : "/myblog/blog/getPageBlogList",
                     data : {
                         page : page,
                         limit : 12

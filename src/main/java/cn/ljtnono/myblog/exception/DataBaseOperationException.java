@@ -19,4 +19,12 @@ public class DataBaseOperationException extends RuntimeException implements Seri
     public DataBaseOperationException(String message) {
         super(message);
     }
+
+    public DataBaseOperationException(Throwable throwable) {
+        super(throwable);
+    }
+
+    public DataBaseOperationException(String message,Throwable throwable) {
+        super(message,throwable);
+    }
 }

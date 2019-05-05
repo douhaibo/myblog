@@ -63,5 +63,5 @@
     </form>
 </div>
 </body>
-<script src="${basePath}js/blog_edit.min.js"></script>
+<script src="${basePath}js/admin/blog/edit.min.js"></script>
 </html>

@@ -20,4 +20,12 @@ public class FieldIllegalException extends RuntimeException implements Serializa
         super(message);
     }
 
+    public FieldIllegalException(Throwable throwable) {
+        super(throwable);
+    }
+
+    public FieldIllegalException(String message,Throwable throwable) {
+        super(message,throwable);
+    }
+
 }

@@ -29,6 +29,7 @@ import java.util.List;
  *  @version 1.0
 */
 @Controller
+@RequestMapping("/tag")
 public class BKTagController extends SimpleEssentialController{
 
     @Autowired

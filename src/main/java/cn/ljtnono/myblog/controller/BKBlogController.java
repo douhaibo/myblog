@@ -32,6 +32,7 @@ import static cn.ljtnono.myblog.common.Counts.ARTICLES_BLOG_COUNT;
  *  @version 1.0
 */
 @Controller
+@RequestMapping("/blog")
 public class BKBlogController extends SimpleEssentialController{
 
     @Autowired

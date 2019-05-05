@@ -16,8 +16,8 @@
                 ${sessionScope.user.username}
             </a>
             <dl class="layui-nav-child">
-                <dd><a href="/myblog/admin/softInfo">博客简介</a></dd>
-                <dd><a href="/myblog/back_edit">写博客</a></dd>
+                <dd><a href="/myblog/admin/system/softInfo">博客简介</a></dd>
+                <dd><a href="/myblog/admin/blog/edit" target="_blank">写博客</a></dd>
             </dl>
         </li>
         <li class="layui-nav-item"><a href="/myblog/admin/exit">注销</a></li>

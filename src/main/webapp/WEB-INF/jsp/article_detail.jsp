@@ -86,21 +86,6 @@
                     </span>
                 </div>
             </div>
-<%--            <div class="next-prev">--%>
-<%--                <a href="${basePath}article_detail?num=${prev.id}" class="BKBlog-prev fl">--%>
-<%--                    <c:if test="${prev != null}">--%>
-<%--                    <i class="fa fa-angle-double-left"></i>--%>
-<%--                        &lt;%&ndash;${prev.title}&ndash;%&gt;--%>
-<%--                        ${prev.title}--%>
-<%--                    </c:if>--%>
-<%--                </a>--%>
-<%--                <a href="${basePath}article_detail?num=${next.id}" class="BKBlog-next fr">--%>
-<%--                    <c:if test="${next != null}">--%>
-<%--                        ${next.title}--%>
-<%--                        <i class="fa fa-angle-double-right"></i>--%>
-<%--                    </c:if>--%>
-<%--                </a>--%>
-<%--            </div>--%>
         </div>
         <div class="pl">
             <div id="SOHUCS" sid="${blog.id}"></div>

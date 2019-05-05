@@ -33,4 +33,4 @@
             </div>
         </div>
     </div>
-<script src="js/softinfo.min.js"></script>
+<script src="${basePath}js/admin/system/softinfo.min.js"></script>

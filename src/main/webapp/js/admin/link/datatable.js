@@ -1,20 +1,28 @@
 /**
- * 标签数据表格的字段显示
+ *  link 数据表格配置
  * @type {{elem: string, toolbar: string, response: {countName: string, statusName: string, msgName: string, statusCode: number}, page: boolean, cols: *[][], url: string, height: number}}
  */
-const TABLE_TAG_CONFIG = {
-    elem: '#datatable-tag',
+const TABLE_LINK_CONFIG = {
+    elem: '#datatable-link',
     height: 470,
-    url: '/myblog/getPageTagList',
+    url: '/myblog/link/getPageLinkList',
     page: true,
     toolbar: "#toolbar",
     cols: [[
         {type: 'checkbox', fixed: 'left'},
         {field: 'id', title: 'ID', fixed: 'left'},
         {field: 'title', title: '标题'},
-        {field: 'link', title: '链接地址', templet:function (d) {
-                return d.link.href;
-            }},
+        {field: 'href', title: '地址'},
+        {
+            field: 'type', title: '类型',
+            templet: function (d) {
+                if (d.type === 1) {
+                    return "本地链接";
+                } else if (d.type === 2) {
+                    return "外链";
+                }
+            }
+        },
         {
             field: 'createDateTime',
             title: '创建时间',
@@ -50,7 +58,6 @@ const TABLE_TAG_CONFIG = {
         msgName: "message"
     }
 };
-
 /**
  * 更新 表单容器
  * @type {jQuery.fn.init|jQuery|HTMLElement}
@@ -67,7 +74,7 @@ function deleteChecked(params,remove) {
     layer.confirm(message, function (index) {
         layer.close(index);
         $.ajax({
-            url: "deleteTagsByIdArray",
+            url: "/myblog/link/deleteLinksByIdArray",
             data: {
                 params: params,
                 remove: remove
@@ -80,38 +87,6 @@ function deleteChecked(params,remove) {
                 } else {
                     layer.msg(data.message, function () {
 
-                    });
-                }
-            },
-            error: function () {
-                ajaxErrorNormal();
-            }
-        })
-    });
-}
-
-/**
- * 根据id删除一个链接  只是set mode = 0
- * @param id 要删除的链接的id
- * @param remove 是否移除
- */
-function deleteTagById(id,remove) {
-    const message = remove ? "真的移除么" : "真的删除么";
-    layer.confirm(message, function (index) {
-        layer.close(index);
-        $.ajax({
-            url: "/myblog/deleteTagById",
-            data: {
-                id: id,
-                remove: remove
-            },
-            dataType: "json",
-            method: "GET",
-            success: function (data) {
-                if (data.status === 200 && data.request === "success") {
-                    layer.msg(data.message);
-                } else {
-                    layer.msg(data.message, function () {
                     });
                 }
             },
@@ -138,6 +113,8 @@ function showLayer(data) {
         success: function () {
             $("#form-update-container  input[name='id']").val(data.id);
             $("#form-update-container  input[name='title']").val(data.title);
+            $("#form-update-container  input[name='type']").val(data.type);
+            $("#form-update-container  input[name='classNames']").val(data.classNames);
         },
         end: function () {
             $FORM_UPDATE_CONTAINER.addClass("layui-hide");
@@ -146,16 +123,48 @@ function showLayer(data) {
 }
 
 /**
- * 修改链接信息
- * @param tag 提交的tag表单数据
+ * 根据id删除一个链接  只是set mode = 0
+ * @param id 要删除的链接的id
+ * @param remove 是否移除
  */
-function updateTag(tag) {
-    // TODO 数据校验
+function deleteLinkById(id,remove) {
+    const message = remove ? "真的移除么" : "真的删除么";
+    layer.confirm(message, function (index) {
+        layer.close(index);
+        $.ajax({
+            url: "/myblog/link/deleteLinkById",
+            data: {
+                id: id,
+                remove: remove
+            },
+            dataType: "json",
+            method: "GET",
+            success: function (data) {
+                if (data.status === 200 && data.request === "success") {
+                    layer.msg(data.message);
+                } else {
+                    layer.msg(data.message, function () {
+                    });
+                }
+            },
+            error: function () {
+                ajaxErrorNormal();
+            }
+        })
+    });
+}
+
+/**
+ * 修改链接信息
+ * @param link 提交的link表单数据
+ */
+function updateLink(link) {
+    // TODO 数据校验  这里由于标签有点不一样，所以更新标签的功能等到blog部分写完再慢慢写
     let load;
     $.ajax({
-        url: "/myblog/updateTag",
+        url: "/myblog/link/updateLink",
         method: "POST",
-        data: JSON.stringify(tag),
+        data: JSON.stringify(link),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         beforeSend: function () {
@@ -188,8 +197,8 @@ function updateTag(tag) {
  */
 layui.use('table', function () {
     const table = layui.table;
-    table.render(TABLE_TAG_CONFIG);
-    table.on('tool(datatable-tag)',function (obj) {
+    table.render(TABLE_LINK_CONFIG);
+    table.on('tool(datatable-link)',function (obj) {
         const data = obj.data;
         const layEvent = obj.event;
         if (layEvent === 'update') {
@@ -199,12 +208,12 @@ layui.use('table', function () {
                 layer.msg("已经删除！");
                 return;
             }
-            deleteTagById(data.id,false);
+            deleteLinkById(data.id,false);
         } else if (layEvent === "remove") {
-            deleteTagById(data.id,true);
+            deleteLinkById(data.id,true);
         }
     });
-    table.on('toolbar(datatable-tag)', function(obj){
+    table.on('toolbar(datatable-link)', function(obj){
         const event = obj.event;
         const checkStatus = table.checkStatus(obj.config.id);
         const params = [];
@@ -228,14 +237,25 @@ layui.use('table', function () {
     });
 });
 /**
- * 查询tag的表单设置
+ * 修改link的表单设置
+ */
+layui.use('form', function(){
+    const form = layui.form;
+    form.on('submit(btn-update)', function(data){
+        const link = data.field;
+        updateLink(link);
+        return false;
+    });
+});
+/**
+ * 查询link的表单设置
  */
 layui.use('form', function(){
     const form = layui.form;
     form.on('submit(btn-search)', function(data){
-        const tag = data.field;
+        const link = data.field;
         // TODO 验证参数正确性
-        if (tag.title === "" && tag.id === "") {
+        if (link.title === "" && link.id === "" && link.href === "") {
             //没有写查询条件，那就查询所有
             layui.use("table",function () {
                 const table = layui.table;
@@ -245,8 +265,8 @@ layui.use('form', function(){
             // 将数据更新到表格当中去
             layui.use("table",function () {
                 const table = layui.table;
-                table.reload('datatable-tag',{
-                    url : "/myblog/searchTag",
+                table.reload('datatable-link',{
+                    url : "/myblog/link/searchLink",
                     where : data.field,
                     page: {
                         curr: 1
@@ -257,30 +277,44 @@ layui.use('form', function(){
         return false;
     });
 });
+/**
+ * 使用日历组件
+ */
+layui.use('laydate', function () {
+    const laydate = layui.laydate;
+    laydate.render({
+        elem: '#calendar',
+        position: 'static',
+        mark: {
+            '0-03-30': '生日',
+            '0-12-31': '跨年'
+        }
+    });
+});
+
 $(function () {
-    // 获取所有标签并且展示到页面上
     (function () {
-        const $content = $(".tag-content");
+        const $content = $(".link-friend-content");
         $.ajax({
-            url : "/myblog/getPageTagList",
+            url : "/myblog/link/getFriendLinkList",
             method: "GET",
             dataType: "json",
-            success:function (data) {
+            success: function (data) {
                 if (data.request === "success" && data.status === 200) {
-                    const tags = data.data;
+                    const links = data.data;
                     // 拼接字符串
                     let result = "";
-                    for (let i = 0;i < tags.length; i++) {
+                    for (let i = 0;i < links.length; i++) {
                         result += "<div class='link'>" +
-                            "<a href='"+tags[i].link.href+"' target='_blank'>" +
-                            "<i class='fa fa-tag'>" +
+                            "<a href='"+links[i].href+"' target='_blank'>" +
+                            "<i class='fa fa-link'>" +
                             "</i>" +
-                            tags[i].title +
+                            links[i].title +
                             "</a>" +
                             "</div>";
                     }
                     $content.html(result);
-                }else {
+                } else {
                     ajaxErrorNormal(data.message);
                 }
             },
@@ -290,3 +324,4 @@ $(function () {
         })
     })();
 });
+
