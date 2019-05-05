@@ -26,10 +26,10 @@ import java.util.List;
 import static cn.ljtnono.myblog.common.Counts.ARTICLES_BLOG_COUNT;
 
 /**
- *  处理Blog相关的请求
+ *  博客相关Controller
  *  @author ljt
- *  @date 2018/11/22
- *  @version 1.0
+ *  @date 2019/5/5
+ *  @version 1.1
 */
 @Controller
 @RequestMapping("/blog")
@@ -43,26 +43,31 @@ public class BKBlogController extends SimpleEssentialController{
 
     private Logger logger = LoggerFactory.getLogger(BKBlogController.class);
 
+    /**
+     * 查看一个博客的详细内容（展示博客）
+     * @param blogId 要展示的博客的id
+     * @return 博客展示页面
+     */
     @RequestMapping("/article_detail")
     public ModelAndView articleDetail(@RequestParam(value = "num",required = false)Integer blogId) {
-        //检查blogId是否正确
+        // TODO 检查博客Id是否正确
         if (blogId == null || blogId <= 0) {
             logger.error("博客参数错误！");
             throw new IllegalArgumentException("参数错误！");
         }
         ModelAndView mv = new ModelAndView();
-        BKBlog BKBlog = bkBlogService.getBlogById(blogId);
+        BKBlog getBlogByIdResult = bkBlogService.getBlogById(blogId);
         bkBlogService.updateBlogViewCountById(blogId);
-        mv.addObject("blog", BKBlog);
+        mv.addObject("blog", getBlogByIdResult);
         mv.setViewName("article_detail");
         return mv;
     }
 
     /**
-     *
+     *  根据博客的标签查询博客雷暴
      * @param page 页数
      * @param type 类型
-     * @return
+     * @return 博客列表页面
      */
     @RequestMapping("/articles")
     public ModelAndView getBlogPageList(Integer page,String type) {
@@ -84,12 +89,14 @@ public class BKBlogController extends SimpleEssentialController{
 
 
     /**
-     * 分页获取全部博客列表
-     * @return JSON格式的全部博客列表
+     * 获取分页博客信息
+     * @param page 获取的页码
+     * @param limit 每页显示条数
+     * @param response http响应对象
+     * @return JsonResult 对象
      */
     @ResponseBody
     @RequestMapping("/getBlogList")
-    @SuppressWarnings("unchecked")
     public JsonResult getBlogList(@RequestParam(value = "page",defaultValue = "1") Integer page, Integer limit, HttpServletResponse response) {
         try {
             PageInfo<BKBlog> blogs = bkBlogService.getBackBlogList(page,limit);

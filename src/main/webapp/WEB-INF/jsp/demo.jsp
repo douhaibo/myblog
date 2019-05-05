@@ -21,9 +21,6 @@
     <div class="show"></div>
 </body>
 
-
-
-
 <script type="text/javascript">
     var url = 'ws://localhost:8080/myblog/websocket/systemInfo';
     var sock = new WebSocket(url);

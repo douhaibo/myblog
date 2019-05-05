@@ -67,13 +67,12 @@
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager"/>
 		<!--这里填写的直接是url-->
-		<property name="loginUrl" value="/back_login"/>
-		<!--<property name="unauthorizedUrl" value="/error/error_shiro"/>-->
+		<property name="loginUrl" value="/admin"/>
 		<property name="filterChainDefinitions">
 			<value>
-				/back/login = anon
-				/back_login = anon
-				/back_** = authc
+				/admin/login = anon
+				/admin = anon
+				/admin/** = authc
 				/images/** = anon
 				/css/** = anon
 				/js/** = anon

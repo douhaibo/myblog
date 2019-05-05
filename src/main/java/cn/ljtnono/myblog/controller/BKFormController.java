@@ -1,22 +1,30 @@
 package cn.ljtnono.myblog.controller;
 
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * 	自动跳转页面
  *  @author ljt
- *  @date 2018/8/9
- *  @version 1.0
+ *  @date 2019/5/5
+ *  @version 1.1
 */
 @Controller
 public class BKFormController {
 
-	@RequestMapping(value="/{formName}")
-	public String loginForm(@PathVariable String formName){
-		return formName;
+	/**
+	 * 前台动态跳转页面
+	 * @param pageName  要跳转的页面的名字
+	 * @return 返回动态页面
+	 */
+	@RequestMapping(value="/{pageName}")
+	public String dynamicPage(@PathVariable String pageName){
+		return pageName;
 	}
 
 	/**
@@ -36,7 +44,7 @@ public class BKFormController {
 	 * @return /admin/index 页面
 	 */
 	@RequestMapping("/admin/{module}/{currentPage}")
-	public ModelAndView backIndex(@PathVariable("module") String module, @PathVariable("currentPage")String currentPage, ModelAndView mv) {
+	public ModelAndView adminIndex(@PathVariable("module") String module, @PathVariable("currentPage")String currentPage, ModelAndView mv) {
 		mv.addObject("module", module);
 		mv.addObject("currentPage", currentPage);
 		mv.setViewName("/admin/index");
@@ -48,10 +56,9 @@ public class BKFormController {
 	 * @return 后台登陆界面
 	 */
 	@RequestMapping("/admin")
-	public String backLogin() {
+	public String adminLogin() {
 		return "/admin/login";
 	}
-
 
 	/**
 	 * 跳转到博客编辑界面

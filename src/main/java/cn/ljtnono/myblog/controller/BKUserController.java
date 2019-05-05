@@ -86,7 +86,7 @@ public class BKUserController extends SimpleEssentialController{
      */
     @RequestMapping("/updatePassword")
     @ResponseBody
-    @RequiresPermissions("/back/updatePassword")
+    @RequiresPermissions("/admin/updatePassword")
     public String updatePassword(String newPassword,Integer type) {
         BKUser user = (BKUser) SecurityUtils.getSubject();
         if (user == null) {

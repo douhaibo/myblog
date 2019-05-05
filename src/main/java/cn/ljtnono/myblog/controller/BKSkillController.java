@@ -2,6 +2,7 @@ package cn.ljtnono.myblog.controller;
 
 import cn.ljtnono.myblog.entity.BKSkill;
 import cn.ljtnono.myblog.pojo.JsonResult;
+import cn.ljtnono.myblog.pojo.PageParam;
 import cn.ljtnono.myblog.service.BKSkillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +41,13 @@ public class BKSkillController extends SimpleEssentialController{
             logger.error("获取技能数据失败！原因：" + e.getMessage());
         }
         return jsonResult;
+    }
+
+    @RequestMapping("/getPageSkillList")
+    @ResponseBody
+    public JsonResult getPageSkillList(PageParam pageParam, HttpServletResponse response) {
+        // TODO 待写
+        return null;
     }
 
 }

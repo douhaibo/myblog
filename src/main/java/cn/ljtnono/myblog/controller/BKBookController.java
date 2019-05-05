@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- *  book控制器
+ *  book相关的controller
  *  @author ljt
- *  @date 2019/1/17
- *  @version 1.0
+ *  @date 2019/5/5
+ *  @version 1.1
 */
 @Controller
 @RequestMapping("/book")
@@ -28,6 +28,11 @@ public class BKBookController extends SimpleEssentialController{
 
     private final Logger logger = LoggerFactory.getLogger(BKBookController.class);
 
+    /**
+     *  获取关于我页面的书籍列表信息
+     * @param response http响应对象
+     * @return JsonResult 对象
+     */
     @RequestMapping("/getAboutMeBookList")
     @ResponseBody
     public JsonResult getAboutMeBookList(HttpServletResponse response) {
