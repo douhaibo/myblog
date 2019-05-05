@@ -34,14 +34,14 @@ public class BKFormController {
 	 * @param mv 视图
 	 * @return mv
 	 */
-	@RequestMapping("/back_{currentPageName}")
+	@RequestMapping("/admin/{currentPageName}")
 	public ModelAndView backIndex(@PathVariable String currentPageName, ModelAndView mv) {
-		mv.addObject("currentPageName","back_" + currentPageName);
-		mv.setViewName("back_index");
+		mv.addObject("currentPageName", currentPageName);
+		mv.setViewName("/admin/index");
 		return mv;
 	}
 
-	@RequestMapping("/admin/login")
+	@RequestMapping("/admin")
 	public String backLogin() {
 		return "/admin/login";
 	}

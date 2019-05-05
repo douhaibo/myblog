@@ -29,7 +29,7 @@ import org.springframework.web.servlet.ModelAndView;
  *  @version 1.0
  */
 @Controller
-@RequestMapping("/back")
+@RequestMapping("/admin")
 public class BKUserController extends SimpleEssentialController{
 
     private Logger logger = LoggerFactory.getLogger(BKUserController.class);
@@ -51,8 +51,8 @@ public class BKUserController extends SimpleEssentialController{
             subject.login(token);
             BKUser user = (BKUser) subject.getPrincipal();
             subject.getSession(true).setAttribute("user", user);
-            mv.addObject("currentPageName","back_softInfo");
-            mv.setViewName("back_index");
+            mv.addObject("currentPageName","softInfo");
+            mv.setViewName("/admin/index");
         } catch (UnknownAccountException uae) {
             logger.error("未知用户！");
             throw new MyAuthenticationException("没有此用户！");

@@ -16,11 +16,11 @@
                 ${sessionScope.user.username}
             </a>
             <dl class="layui-nav-child">
-                <dd><a href="/myblog/back_softInfo">博客简介</a></dd>
+                <dd><a href="/myblog/admin/softInfo">博客简介</a></dd>
                 <dd><a href="/myblog/back_edit">写博客</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item"><a href="/myblog/back/exit">注销</a></li>
+        <li class="layui-nav-item"><a href="/myblog/admin/exit">注销</a></li>
     </ul>
 </div>
 

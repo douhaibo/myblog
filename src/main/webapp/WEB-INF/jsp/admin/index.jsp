@@ -25,10 +25,10 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-    <jsp:include page="back_header.jsp" flush="true"/>
-    <jsp:include page="back_left.jsp" flush="true"/>
+    <jsp:include page="header.jsp" flush="true"/>
+    <jsp:include page="left.jsp" flush="true"/>
     <jsp:include page="${currentPageName}.jsp"/>
-    <jsp:include page="back_footer.jsp" flush="true"/>
+    <jsp:include page="footer.jsp" flush="true"/>
 </div>
 <script>
     layui.use('element', function () {
